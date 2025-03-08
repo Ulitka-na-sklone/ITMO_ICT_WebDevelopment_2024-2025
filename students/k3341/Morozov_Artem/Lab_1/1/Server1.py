@@ -5,9 +5,10 @@ def server():
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+    # Адрес и хост
     sock.bind(server_address)
 
-    print("Сервер запущен. Ожидание сообщения от клиента...")
+    print("Сервер запущен.")
 
     while True:
         data, client_address = sock.recvfrom(4096)

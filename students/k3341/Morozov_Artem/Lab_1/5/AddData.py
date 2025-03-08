@@ -5,8 +5,8 @@ url = "http://localhost:8081/subject"
 
 # Данные, которые нужно добавить
 data = {
-    "name": "Subject2",
-    "mark": "4"
+    "name": "Subject3",
+    "mark": "5"
 }
 
 # Выполнение POST-запроса

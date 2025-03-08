@@ -7,6 +7,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 server_socket.bind((host, port))
 
+# Ждем входящие соединение
 server_socket.listen(5)
 print(f"HTTP-сервер запущен на {host}:{port}")
 
