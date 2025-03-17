@@ -1,0 +1,7 @@
+site_name: Lab_2
+nav:
+  - Модели: models.md
+  - URLs: urls.md
+  - Views: views.md
+  - Forms: forms.md
+theme: readthedocs
