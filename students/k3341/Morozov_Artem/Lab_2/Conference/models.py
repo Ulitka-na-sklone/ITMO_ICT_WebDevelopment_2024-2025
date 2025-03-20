@@ -9,17 +9,11 @@ class User(AbstractUser):
     education = models.CharField(max_length=200, blank=True, null=True, verbose_name="Образование")
     phone_number = models.CharField(max_length=15, blank=True, null=True, verbose_name="Номер телефона")
 
-    def __str__(self):
-        return self.first_name
-
 class Conference(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     date = models.DateField()
     location = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.title
 
 class PresentationRegistration(models.Model):
     RECOMMENDATION_CHOICES = [
@@ -39,15 +33,9 @@ class PresentationRegistration(models.Model):
         verbose_name="Рекомендация к публикации"
     )
 
-    def __str__(self):
-        return f"{self.user.username} - {self.conference.title}"
-
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
     text = models.TextField()
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(10)])
     date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.user.username} - {self.conference.title} - {self.rating}"

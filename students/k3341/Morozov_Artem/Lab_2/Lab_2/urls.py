@@ -30,4 +30,5 @@ urlpatterns = [
     path('conferences/<int:conference_id>/', conference_detail, name='conference_detail'),
     path('profile/', profile, name='profile'),
     path('profile/presentation/edit/<int:presentation_id>/', edit_presentation, name='edit_presentation'),
+    path('profile/presentation/delete/<int:presentation_id>/', delete_presentation, name='delete_presentation'),
 ]
